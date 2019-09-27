@@ -104,15 +104,17 @@ int main(void){
     
     ADC0_init();//initialise adc0
     
+    //initialise all led
     led_red_init();
     led_blue_init();
     led_green_init();
     
+    //initially turn off all led
     led_red_off();
     led_blue_off();
     led_green_off();
     
-    long long int n=1e6;
+    long long int n=1e6; //number of delay
     
     while(1){
         
