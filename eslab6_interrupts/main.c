@@ -74,8 +74,10 @@ void SysTick_Handler(void){
 //=============================SysTick_init=============================//
 void SysTick_init(){
 	SysTick->LOAD = 20971 - 1;//load the RVR reg of systick
-	SysTick->VAL = 0x00;
-	SysTick->CTRL = 0x07;//enable the timer and interrupt
+	SysTick->VAL = 0x00;//reset timer
+	SysTick->CTRL = 0x07;//enable the timer and interrupt by putting
+	//one at 0th and 1th position(request)
+	//and 0 at 3rd position (res??)
 }
 
 void UART0_init(void)
