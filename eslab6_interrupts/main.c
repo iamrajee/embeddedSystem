@@ -122,14 +122,14 @@ void UART0_IQRHandler(){
 	if (c =='g') //Green LED ON
 	{
 		led_green_on();
-		//delay_better(1000);
-		delay_old(100000);
+		delay_better(1000);
+		// delay_old(100000);
 		led_green_off();
 	}else if(c=='b') //blue LED OFF
 	{
 		led_blue_on();
 		delay_better(1000);
-		delay_old(100000);
+		// delay_old(100000);
 		led_blue_off();
 	}
 }
@@ -155,6 +155,8 @@ int main(void){
 	led_green_on();
 	led_blue_on();
 	while(1){
+
+		// 2
 		if(ticket[0]>500){//used for second experiment of blinking multiple led
 			ticket[0]=0;
 			led_green_toggle();
@@ -163,9 +165,12 @@ int main(void){
 			ticket[1]=0;
 			led_blue_toggle();
 		}
+
+		//1
 		//led_green_toggle(); //used for very first simple experiment of blinking single led
+
 		//delay_old(1e6); //normal delay function
-		//delay_better(1000); //improved delay function
+		delay_better(1000); //improved delay function
 	}
 	led_green_off();
 	//==========================================================================================
