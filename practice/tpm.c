@@ -33,7 +33,7 @@ void TPM0_init(){
 void decreaseBrightness(){
     int interval = 5;
     if(TPM0->CONTROLS[1].Cnv <= interval){
-        TPM0->CONTROLS[1].Cnv = (3/4)*20999;
+        TPM0->CO    NTROLS[1].Cnv = (3/4)*20999;
     }
     TPM0->CONTROLS[1].Cnv-=interval;
 }
